@@ -42,6 +42,13 @@ export default function PaginaInicial() {
     const [username, setUserName] = React.useState('andreoneres')
     const router = useRouter()
 
+    function handleInput(event) {
+      const valor = event.target.value
+      setUserName(valor)
+      if(valor.length > 3) return setUserGitHub(valor)
+      setUserGitHub("")
+    }
+
     return (
       <>
         <Box
@@ -86,14 +93,7 @@ export default function PaginaInicial() {
   
               <TextField
                 value={username}
-                onChange={function(event) {
-
-                  //Onde está o valor?
-                  const valor = event.target.value
-
-                  setUserName(valor)
-                  
-                }}
+                onChange={handleInput}
                 fullWidth
                 textFieldColors={{
                   neutral: {
