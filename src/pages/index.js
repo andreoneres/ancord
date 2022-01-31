@@ -1,7 +1,8 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components'
 import React from 'react'
 import { useRouter } from 'next/router'
-import appConfig from '../config.json'
+import appConfig from '../../config.json'
+
 
 function Title(props) {
     const Tag = props.tag || 'h1'
@@ -40,13 +41,16 @@ export default function PaginaInicial() {
     // const username = 'andreoneres';
 
     const [username, setUserName] = React.useState('andreoneres')
+    const [usergithub, setUserGitHub] = React.useState('andreoneres')
+    
     const router = useRouter()
 
     function handleInput(event) {
       const valor = event.target.value
+
       setUserName(valor)
+
       if(valor.length > 3) return setUserGitHub(valor)
-      setUserGitHub("")
     }
 
     return (
@@ -140,7 +144,7 @@ export default function PaginaInicial() {
                   borderRadius: '50%',
                   marginBottom: '16px',
                 }}
-                src={`https://github.com/${username}.png`}
+                src={`https://github.com/${usergithub}.png`}
               />
               <Text
                 variant="body4"
@@ -151,7 +155,7 @@ export default function PaginaInicial() {
                   borderRadius: '1000px'
                 }}
               >
-                {username}
+                {usergithub}
               </Text>
             </Box>
             {/* Photo Area */}
