@@ -19,6 +19,10 @@ function listenNewMessages(addMessage) {
 
 export default function ChatPage() {
 
+  React.useEffect(() => {
+    document.title = "Chat - Ancord"
+  }, []);
+
   const router = useRouter();
   const userLoggedIn = router.query.username;
 

@@ -3,8 +3,12 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import appConfig from '../../config.json'
 
-
 function Title(props) {
+
+    React.useEffect(() => {
+        document.title = "Ancord"
+    }, []);
+
     const Tag = props.tag || 'h1'
     return (
         <>
