@@ -11,7 +11,7 @@ function Title(props) {
             <Tag>{props.children}</Tag>
             <style jsx>{`
                 ${Tag} {
-                    color: ${appConfig.theme.colors.neutrals['500']};
+                    color: ${appConfig.theme.colors.neutrals['300']};
                 }
             `}
             </style>
